@@ -12,6 +12,8 @@ run `npm install` in the root directory and in ./frontend/ to install depencies.
 
 To start the development server, run `npm run watch` in root directory. Start the web page by running `npm start` in ./frontend/ directory.  
 
+To create a production build, run `npm run build:ui` in root directory. After this the web page can be deployed for example to [Heroku](https://devcenter.heroku.com/articles/git)
+
 ## For further development
 - Filtering feature for filtering the package list
 - Tests for backend to ensure that the data is valid in case of changes in code
