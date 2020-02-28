@@ -1,5 +1,5 @@
 # dpkg-library
-A small web page for displaying dpkg packages and their depencies.
+A small web page for displaying Debian packages and their depencies.
 
 For data parsing I used my own parser: https://github.com/lauripalonen/dpkg-status-parser
 
