@@ -7,7 +7,8 @@ const App = () => {
   const [display, setDisplay] = useState('')
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/packages')
+
+    fetch('https://dpkg-library.herokuapp.com/api/packages')
       .then(
         function (response) {
           if (response.status !== 200) {

@@ -14,9 +14,13 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/packages', (req, res) => {
-  res.json(packages)
+  if(packages){
+    res.json(packages)
+  } else {
+    res.status(404).end()
+  }
 })
 
-const port = process.env.PORT || 3001
-app.listen(port)
-console.log(`Server running on port ${port}`)
+const PORT = process.env.PORT || 3001
+app.listen(PORT)
+console.log(`Server running on port ${PORT}`)
