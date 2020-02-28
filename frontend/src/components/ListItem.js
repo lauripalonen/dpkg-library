@@ -1,10 +1,8 @@
 import React from 'react'
 
-const ListItem = ({ pkg, handlePkgClick }) => {
+const ListItem = ({ pkg, handleItemClick }) => {
   return (
-      <button onClick={(e) => handlePkgClick(pkg, e)}>
-        {pkg.name}
-      </button>
+    <li onClick={(e) => handleItemClick(pkg, e)} className="list-item" key={pkg.id}>{pkg.name}</li>
   )
 }
 

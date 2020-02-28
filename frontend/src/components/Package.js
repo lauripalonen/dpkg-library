@@ -1,37 +1,28 @@
 import React from 'react'
+import Depency from './Depency'
 
-const Package = ({ pkg, pkg_list, handleCloseDisplay, handlePkgClick }) => {
-  const depencies = pkg.depencies.map(dep =>
-    <li style={{ display: 'inline' }} key={dep}>
-      <button
-        onClick={(e) => handlePkgClick(pkg_list[dep], e)}> {pkg_list[dep].name}
-      </button>
-    </li>
-  )
-  const reverseDepencies = pkg.dependants.map(dep =>
-    <li style={{ display: 'inline' }} key={dep}>
-      <button
-        onClick={(e) => handlePkgClick(pkg_list[dep], e)}> {pkg_list[dep].name}
-      </button>
-    </li>
-  )
+const Package = ({ packageItem, packages, handleCloseDisplay, handleItemClick }) => {
 
-  const divstyling = {
-    position: "absolute",
-    zIndex: "100",
-    backgroundColor: "lightgrey",
-    top: "100px",
-    width: "100%"
+  let depencies = packageItem.depencies.map(depId => <Depency depencyId={depId} packages={packages} handleItemClick={handleItemClick} />)
+  const alternatives = packageItem.alternatives.map(alt => <li>{alt}</li>)
+  let reverseDepencies = packageItem.dependants.map(depId => <Depency depencyId={depId} packages={packages} handleItemClick={handleItemClick} />)
+
+  if (depencies.length < 1) {
+    depencies = "None"
+  }
+
+  if (reverseDepencies.length < 1) {
+    reverseDepencies = "None"
   }
 
   return (
-    <div style={divstyling}>
+    <div className="package-display">
       <ul>
-        <li>NAME: {pkg.name}</li>
-        <li>DESCRIPTION: {pkg.description}</li>
-        <ul>DEPENCIES: {depencies}</ul>
-        <ul>REVERSE DEPENCIES: {reverseDepencies}</ul>
+        <li>NAME: {packageItem.name}</li>
+        <li>DESCRIPTION: {packageItem.description}</li>
       </ul>
+      <ul className="depency-list">DEPENCIES: {depencies}{alternatives}</ul>
+      <ul className="depency-list">REVERSE DEPENCIES: {reverseDepencies}</ul>
       <button onClick={handleCloseDisplay}>close</button>
     </div>
   )
