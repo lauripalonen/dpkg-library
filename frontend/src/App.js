@@ -8,7 +8,7 @@ const App = () => {
 
   useEffect(() => {
     const url = process.env.NODE_ENV === 'development' ?
-      'http://localhost:3001/api/packages' : 'https://dpkg-library.herokuapp.com'
+      'http://localhost:3001/api/packages' : 'https://dpkg-library.herokuapp.com/api/packages'
 
     fetch(url)
       .then(
