@@ -23,10 +23,12 @@ const App = () => {
 
   const handleItemClick = (packageItem, event) => {
     event.preventDefault()
+
     const singleDisplay = <Package packageItem={packageItem}
       packages={packages}
       handleCloseDisplay={handleCloseDisplay}
       handleItemClick={handleItemClick} />
+
     setDisplay(singleDisplay)
   }
 
@@ -38,7 +40,9 @@ const App = () => {
   return (
     <div className="main-content">
       <div className="top-bar"><h1>dpkg library</h1></div>
-      <PackageList packages={packages} handleItemClick={handleItemClick}/>
+      <div className="list-container">
+        <PackageList packages={packages} handleItemClick={handleItemClick} />
+      </div>
       {display}
     </div>
   );

@@ -9,7 +9,7 @@ const packageList = ({packages, handleItemClick}) => {
   return (
     <ul className="package-list">
       {packages.map(pkg =>
-          <ListItem pkg={pkg} handleItemClick={handleItemClick} />
+          <ListItem pkg={pkg} key={pkg.id} handleItemClick={handleItemClick} />
       )}
     </ul>
   )
