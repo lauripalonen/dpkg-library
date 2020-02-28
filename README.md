@@ -1,5 +1,7 @@
 # dpkg-library
-A small web page for displaying Debian packages and their depencies.
+A small web page for displaying Debian packages and their depencies.  
+
+Deployed to Heroku: https://dpkg-library.herokuapp.com  
 
 For data parsing I used my own parser: https://github.com/lauripalonen/dpkg-status-parser
 
