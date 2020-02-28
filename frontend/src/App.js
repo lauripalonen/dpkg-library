@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Package from './components/Package'
-import ListItem from './components/ListItem'
+import PackageList from './components/packageList'
 
 const App = () => {
   const [packages, setPackages] = useState([])
@@ -14,18 +14,6 @@ const App = () => {
             console.log('Problem encountered...')
           } else {
             response.json().then(function (data) {
-              data.sort(function (a, b) {
-                if (a.name < b.name) {
-                  return -1
-                }
-
-                if (a.name > b.name) {
-                  return 1
-                }
-
-                return 0
-              })
-
               setPackages(data)
             })
           }
@@ -33,12 +21,12 @@ const App = () => {
 
   }, [])
 
-  const handlePkgClick = (pkg, event) => {
+  const handleItemClick = (packageItem, event) => {
     event.preventDefault()
-    const singleDisplay = <Package pkg={pkg}
-      pkg_list={packages}
+    const singleDisplay = <Package packageItem={packageItem}
+      packages={packages}
       handleCloseDisplay={handleCloseDisplay}
-      handlePkgClick={handlePkgClick} />
+      handleItemClick={handleItemClick} />
     setDisplay(singleDisplay)
   }
 
@@ -47,26 +35,10 @@ const App = () => {
     setDisplay('')
   }
 
-  const pkgList = () => {
-    if (packages.length < 1) {
-      return (
-        <div></div>
-      )
-    }
-
-    return (
-      <ul>
-        {packages.map(pkg => <li key={pkg.id}>
-          <ListItem pkg={pkg} handlePkgClick={handlePkgClick} />
-        </li>)}
-      </ul>
-    )
-  }
-
   return (
-    <div className="App">
-      <h1>dpkg package library</h1>
-      {pkgList()}
+    <div className="main-content">
+      <div className="top-bar"><h1>dpkg library</h1></div>
+      <PackageList packages={packages} handleItemClick={handleItemClick}/>
       {display}
     </div>
   );

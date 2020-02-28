@@ -1,0 +1,46 @@
+body {
+  background-color: azure;
+}
+
+li {
+  list-style-type: none;
+}
+
+.top-bar {
+  background-color: darkgray;
+  text-align: center;
+}
+
+.package-list li:nth-child(odd){
+  background-color: lightgrey;
+}
+
+.package-list li:nth-child(odd):hover{
+  background-color: white;
+}
+
+.depency-list li{
+  display:inline-block;
+  margin: 0.25em;
+}
+
+
+.list-item {
+  list-style-type: none;
+  background-color: whitesmoke;
+  height:3em;
+  width: 100%
+}
+
+.list-item:hover {
+  background-color: white;
+}
+
+.package-display {
+  position: fixed;
+  z-index: 100;
+  background-color: lightgray;
+  top: 100px;
+  width: 100%;
+  overflow-y: scroll;
+}

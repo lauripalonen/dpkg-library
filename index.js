@@ -17,22 +17,22 @@ app.get('/api/packages', (req, res) => {
   res.json(packages)
 })
 
-app.get('/api/packages/:id', (request, response) => {
-  const id = Number(request.params.id)
-  const package = packages.find(pkg => {
-    console.log(pkg)
-    return (
-      pkg.id === id
-    )
-  })
+// app.get('/api/packages/:id', (request, response) => {
+//   const id = Number(request.params.id)
+//   const package = packages.find(pkg => {
+//     console.log(pkg)
+//     return (
+//       pkg.id === id
+//     )
+//   })
 
-  if (package) {
-    response.json(package)
-  } else {
-    response.status(404).end()
-  }
+//   if (package) {
+//     response.json(package)
+//   } else {
+//     response.status(404).end()
+//   }
 
-})
+// })
 
 const port = 3001
 app.listen(port)
