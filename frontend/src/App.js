@@ -7,12 +7,14 @@ const App = () => {
   const [display, setDisplay] = useState('')
 
   useEffect(() => {
+    const url = process.env.NODE_ENV === 'development' ?
+      'http://localhost:3001/api/packages' : 'https://dpkg-library.herokuapp.com'
 
-    fetch('https://dpkg-library.herokuapp.com/api/packages')
+    fetch(url)
       .then(
         function (response) {
           if (response.status !== 200) {
-            console.log('Problem encountered...')
+            console.log('Failed to fetch data')
           } else {
             response.json().then(function (data) {
               setPackages(data)
@@ -24,7 +26,6 @@ const App = () => {
 
   const handleItemClick = (packageItem, event) => {
     event.preventDefault()
-
     const singleDisplay = <Package packageItem={packageItem}
       packages={packages}
       handleCloseDisplay={handleCloseDisplay}
