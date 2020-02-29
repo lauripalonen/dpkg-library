@@ -1,5 +1,7 @@
 # dpkg-library
-A small web page for displaying Debian packages and their depencies.
+A small web page for displaying Debian packages and their depencies.  
+
+Deployed to Heroku: https://dpkg-library.herokuapp.com  
 
 For data parsing I used my own parser: https://github.com/lauripalonen/dpkg-status-parser
 
@@ -11,6 +13,8 @@ clone project with `git clone git@github.com:lauripalonen/dpkg-library.git` or e
 run `npm install` in the root directory and in ./frontend/ to install depencies.  
 
 To start the development server, run `npm run watch` in root directory. Start the web page by running `npm start` in ./frontend/ directory.  
+
+To create a production build, run `npm run build:ui` in root directory. After this the web page can be deployed for example to [Heroku](https://devcenter.heroku.com/articles/git)
 
 ## For further development
 - Filtering feature for filtering the package list
