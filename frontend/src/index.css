@@ -75,6 +75,7 @@ ul, li {
   font-size: 1em;
   padding: 0.8em;
   border: none;
+  background-color: #d6d6d6;
 }
 
 .alt-depency button{
