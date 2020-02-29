@@ -7,8 +7,10 @@ body {
   padding: 0;
 }
 
-li {
-  list-style-type: none;
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .top-bar {
@@ -37,6 +39,7 @@ li {
 
 .package-list-item {
   background-color:#f0f0f0;
+  margin-left: 0;
   width: 80%;
   max-width: 20em;
   margin: auto;
@@ -44,7 +47,6 @@ li {
   font-size: 1.5em;
   font-weight: 600;
   padding: 0.6em;
-  max-height: 50%;
 }
 
 .package-display {
@@ -52,17 +54,16 @@ li {
   z-index: 100;
   background-color: #f5f5f5;
   top: 25%;
-  left: 50%;
-  width: 90%;
-  max-width: 50em;
-  max-height: 60%;
   left: 0;
   right: 0;
+  width: 50em;
+  max-width: 70%;
+  max-height: 60%;
   box-shadow: 6px 6px 4px rgba(68,68,68,0.4);
-  margin: 10px auto;
+  margin: auto;
   font-family: 'Open Sans';
   overflow: auto;
-  padding: 2em 1em 0em 3em;
+  padding: 1em 1em 0em 3em;
 }
 
 .depency-list li{
