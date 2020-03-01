@@ -24,7 +24,7 @@ Remember to change original heroku url in frontend/src/App.js to a corresponding
 
 Run tests with command `npm test` on root directory. This will also create a test coverage data to folder ./coverage/.  
 
-Note: at this point tests are only done for backend.
+Note: At this point tests cover only backend.
 
 ## For further development
 - Filtering feature for filtering the package list
