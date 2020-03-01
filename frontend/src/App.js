@@ -8,19 +8,18 @@ const App = () => {
 
   useEffect(() => {
     const url = process.env.NODE_ENV === 'development' ?
-      'http://localhost:3001/api/packages' : 'https://dpkg-library.herokuapp.com/api/packages'
+      'http://localhost:3001' : 'https://dpkg-library.herokuapp.com'
 
-    fetch(url)
-      .then(
-        function (response) {
-          if (response.status !== 200) {
-            console.log('Failed to fetch data')
-          } else {
-            response.json().then(function (data) {
-              setPackages(data)
-            })
-          }
-        })
+    fetch(`${url}/api/packages`)
+      .then(response => {
+        if (response.status !== 200) {
+          console.log('Failed to fetch data')
+        } else {
+          response.json().then(function (data) {
+            setPackages(data)
+          })
+        }
+      })
 
   }, [])
 
