@@ -18,7 +18,7 @@ To start the development server, run `npm run watch` in root directory. Start th
 
 To create a production build, run `npm run build:ui` in root directory. After this the web page can be deployed for example to [Heroku](https://devcenter.heroku.com/articles/git)  
 
-Remember to change original heroku url in frontend/App.js to a corresponding address.
+Remember to change original heroku url in frontend/src/App.js to a corresponding address.
 
 ## Test
 
