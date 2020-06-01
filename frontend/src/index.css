@@ -66,19 +66,19 @@ ul, li {
   padding: 1em 1em 0em 3em;
 }
 
-.depency-list li{
+.dependency-list li{
   display:inline-block;
   margin: 0.25em;
 }
 
-.depency-item button{
+.dependency-item button{
   font-size: 1em;
   padding: 0.8em;
   border: none;
   background-color: #d6d6d6;
 }
 
-.alt-depency button{
+.alt-dependency button{
   font-size: 1em;
   padding: 0.8em;
   border: none;
@@ -86,7 +86,7 @@ ul, li {
   outline: inherit;
 }
 
-.alt-depency button:hover{
+.alt-dependency button:hover{
   background-color: #ededed
 }
 

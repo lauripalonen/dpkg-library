@@ -17,7 +17,7 @@ test('first item has correct properties', async () => {
 
   expect(samplePackage).toHaveProperty('name')
   expect(samplePackage).toHaveProperty('description')
-  expect(samplePackage).toHaveProperty('depencies')
+  expect(samplePackage).toHaveProperty('dependencies')
   expect(samplePackage).toHaveProperty('alternatives')
   expect(samplePackage).toHaveProperty('dependants')
 })
